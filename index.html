@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="icon" type="image/png" sizes="32x32" href="./project/assets/images/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="./project/assets/images/favicon-32x32.png" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap" rel="stylesheet" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap" rel="stylesheet" />
 
-    <link rel="stylesheet" href="./project/styles/styles.css" />
+		<link rel="stylesheet" href="./project/styles/styles.css" />
 
-    <title>Frontend Mentor | Calculator app</title>
-  </head>
-  <body>
-    <main class="mainContainer">
-      <header class="header">
-        <h1 class="header__title">calculator</h1>
-        <!-- <div class="">
+		<title>Frontend Mentor | Calculator app</title>
+	</head>
+	<body>
+		<main class="mainContainer">
+			<header class="header">
+				<h1 class="header__title">calculator</h1>
+				<!-- <div class="">
           <p class="">theme</p>
 
           <p class="">1</p>
@@ -26,30 +26,30 @@
           <p class="">3</p>
           <input type="range" id="" />
         </div> -->
-      </header>
-      <div class="screen" id="screen"></div>
-      <div class="buttonsContainer" id="buttonsContainer">
-        <button class="button button--7">7</button>
-        <button class="button button--8">8</button>
-        <button class="button button--9">9</button>
-        <button class="button button--command button--delete">del</button>
-        <button class="button button--4">4</button>
-        <button class="button button--5">5</button>
-        <button class="button button--6">6</button>
-        <button class="button button--sum">+</button>
-        <button class="button button--1">1</button>
-        <button class="button button--2">2</button>
-        <button class="button button--3">3</button>
-        <button class="button button--subtraction">-</button>
-        <button class="button button--dot">.</button>
-        <button class="button button--0">0</button>
-        <button class="button button--division">/</button>
-        <button class="button button--multiplication">x</button>
-        <button class="button button--command button--reset">reset</button>
-        <button class="button button--equal">=</button>
-      </div>
-    </main>
+			</header>
+			<div class="screen" id="screen"></div>
+			<div class="buttonsContainer" id="buttonsContainer">
+				<button class="button button--7">7</button>
+				<button class="button button--8">8</button>
+				<button class="button button--9">9</button>
+				<button class="button button--command button--delete">del</button>
+				<button class="button button--4">4</button>
+				<button class="button button--5">5</button>
+				<button class="button button--6">6</button>
+				<button class="button button--sum" id="operatorSum">+</button>
+				<button class="button button--1">1</button>
+				<button class="button button--2">2</button>
+				<button class="button button--3">3</button>
+				<button class="button button--subtraction" id="operatorSus">-</button>
+				<button class="button button--dot">.</button>
+				<button class="button button--0">0</button>
+				<button class="button button--division" id="operatorDiv">/</button>
+				<button class="button button--multiplication" id="operatorMul">x</button>
+				<button class="button button--command button--reset">reset</button>
+				<button class="button button--equal" id="equal">=</button>
+			</div>
+		</main>
 
-    <script src="./project/javascript/scripts.js"></script>
-  </body>
+		<script src="./project/javascript/scripts.js"></script>
+	</body>
 </html>

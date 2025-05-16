@@ -1,94 +1,35 @@
+const buttons = [...document.getElementsByClassName("button")];
+
 const SCREEN = document.getElementById("screen");
-const buttonsContainers = document.getElementById("buttonsContainer");
 
-let numberToOperate1;
-let numberToOperate2;
-let typeOperation;
+const operadorSum = document.getElementById("operatorSum");
+const operadorSus = document.getElementById("operatorSus");
+const operadorMul = document.getElementById("operatorMul");
+const operadorDiv = document.getElementById("operatorDiv");
 
-buttonsContainers.addEventListener("click", (event) => {
-  if (event.target.tagName === "BUTTON") {
-    let temporalValue = SCREEN.textContent;
+const operadorEqual = document.getElementById("equal");
 
-    function replaceComma() {
-      if (temporalValue.includes(",")) {
-        temporalValue = temporalValue.replace(",", ".");
-      }
-    }
+let numbers = buttons.filter((element) => element.textContent >= 0);
+// let operadors = buttons.filter((element) => isNaN(element.textContent));
+let numberForOperate;
+let number2;
 
-    function saveValue() {
-      SCREEN.textContent = "";
+document.addEventListener("click", (event) => {
+	// let op = operadors.find((element) => element == event.target);
 
-      replaceComma();
+	if (numbers.find((element) => element === event.target)) {
+		SCREEN.textContent = SCREEN.textContent + event.target.textContent;
+	}
 
-      temporalValue != "" ? (numberToOperate1 = parseFloat(temporalValue)) : (numberToOperate1 = 0);
-    }
+	if (event.target == operadorSum) {
+		number2 = SCREEN.textContent;
 
-    switch (event.target.textContent) {
-      case "+":
-        saveValue();
-        typeOperation = "+";
-        break;
+		SCREEN.textContent = "";
+	}
 
-      case "-":
-        saveValue();
-        typeOperation = "-";
-        break;
+	if (event.target == operadorEqual) {
+		numberForOperate = SCREEN.textContent;
 
-      case "x":
-        saveValue();
-        typeOperation = "x";
-        break;
-
-      case "/":
-        saveValue();
-        typeOperation = "/";
-        break;
-
-      case "del":
-        SCREEN.textContent = SCREEN.textContent.replace(SCREEN.textContent.slice(-1), "");
-        break;
-
-      case "reset":
-        SCREEN.textContent = "";
-        numberToOperate1 = undefined;
-        numberToOperate2 = undefined;
-        break;
-
-      case ".":
-        SCREEN.textContent.includes(",") ? null : (SCREEN.textContent += ",");
-        break;
-
-      case "=":
-        if (numberToOperate1 === undefined || numberToOperate2 === undefined) {
-          SCREEN.textContent = "Error";
-        }
-
-        replaceComma();
-
-        numberToOperate2 = parseFloat(temporalValue);
-
-        switch (typeOperation) {
-          case "+":
-            SCREEN.textContent = numberToOperate1 + numberToOperate2;
-            break;
-
-          case "-":
-            SCREEN.textContent = numberToOperate1 - numberToOperate2;
-            break;
-
-          case "x":
-            SCREEN.textContent = numberToOperate1 * numberToOperate2;
-            break;
-
-          case "/":
-            numberToOperate2 === 0 ? (SCREEN.textContent = "Error") : (SCREEN.textContent = numberToOperate1 / numberToOperate2);
-            break;
-        }
-        break;
-
-      default:
-        SCREEN.textContent += event.target.textContent;
-        break;
-    }
-  }
+		SCREEN.textContent = parseInt(numberForOperate) + parseInt(number2);
+	}
 });
